@@ -61,7 +61,7 @@
             <h2></h2>
             <img src="" alt="">
             <p></p>
-            <p>Pris: </p>
+            <p></p>
         </article>
     </template>
 
@@ -94,8 +94,9 @@
                 let klon = madTemplate.cloneNode(true).content;
                 klon.querySelector("h2").textContent = retter.gsx$navn.$t;
                 klon.querySelector("img").src = retter.gsx$billede.$t;
-                klon.querySelector("p").textContent += retter.gsx$kort.$t;
-                klon.querySelector("p:last-child").textContent += retter.gsx$pris.$t;
+                klon.querySelector("p").textContent += `${retter.gsx$kort.$t}`;
+                klon.querySelector("p:last-child").textContent += `Pris: ${retter.gsx$pris.$t},-`;
+
                 container.appendChild(klon);
             });
 
